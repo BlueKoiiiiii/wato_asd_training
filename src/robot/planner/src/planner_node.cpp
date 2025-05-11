@@ -158,7 +158,11 @@ bool isValid(int x, int y, int width, int height, const std::vector<int8_t>& map
   
   // Consider a cell valid only if it's definitely free (values < 50)
   // This is the key fix - previously it might have been allowing obstacles
+<<<<<<< Updated upstream
   return value < 90;
+=======
+  return value < 70;
+>>>>>>> Stashed changes
 }
 
 void PlannerNode::planpath(double start_world_x, double start_world_y, double goal_x, double goal_y){

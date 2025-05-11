@@ -60,7 +60,11 @@ void CostmapNode::lidartogrid(const std::vector<float>& ranges, float angle_min,
 }
 
 void CostmapNode::inflateObstacles(){
+<<<<<<< Updated upstream
   int inflation_radius = 3/0.5; 
+=======
+  int inflation_radius = 5/0.5; 
+>>>>>>> Stashed changes
   for (int x = 0; x < 10; x++) {
     for (int y = 0; y < 10; y++) {
       if(OccupancyGrid[x][y]==100){

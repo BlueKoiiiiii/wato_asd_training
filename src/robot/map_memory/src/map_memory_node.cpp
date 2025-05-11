@@ -39,6 +39,14 @@ void MapMemoryNode::costmapcallback(const nav_msgs::msg::OccupancyGrid::SharedPt
 
 void MapMemoryNode::updatemap(){
   if (should_update_map && costmap_updated) {
+<<<<<<< Updated upstream
+=======
+    if(map_initialized == false){
+    global_map_.data.resize(2500);
+    std::fill(global_map_.data.begin(), global_map_.data.end(), -1);  // Properly initialize with unknown
+    map_initialized = true; 
+  }
+>>>>>>> Stashed changes
     integrateCostmap();
     global_map_.header.frame_id = "map";
     global_map_.info.width = 50;
@@ -47,18 +55,26 @@ void MapMemoryNode::updatemap(){
     global_map_.info.origin.position.x = -12.5; // Center the map (50*0.5/2 = 12.5)
     global_map_.info.origin.position.y = -12.5;
     global_map_.data.resize(50 * 50, -1); // Initialize with unknown (-1)
+<<<<<<< Updated upstream
 
+=======
+    
+>>>>>>> Stashed changes
     map_pub_->publish(global_map_);
   }
 }
 void MapMemoryNode::integrateCostmap(){
   double resolution = 0.6;
 
+<<<<<<< Updated upstream
   if(map_initialized == false){
     global_map_.data.resize(2500);
     std::fill(global_map_.data.begin(), global_map_.data.end(), -1);  // Properly initialize with unknown
     map_initialized = true; 
   }
+=======
+
+>>>>>>> Stashed changes
 
   int costmap_width = 10;  // Based on your costmap array size
   int costmap_height = 10; // Based on your costmap array size
